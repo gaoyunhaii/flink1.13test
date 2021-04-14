@@ -1,0 +1,9 @@
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target hashmap hashmap 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target hashmap rocksdb 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target hashmap rocksdb_incre 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target rocksdb hashmap 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target rocksdb rocksdb 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target rocksdb rocksdb_incre 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target rocksdb_incre hashmap 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target rocksdb_incre rocksdb 40 20
+bash -x bin/single_test.sh /home/yungao.gy/manual/master/build-target rocksdb_incre rocksdb_incre 40 20
