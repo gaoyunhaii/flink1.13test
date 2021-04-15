@@ -14,7 +14,7 @@ rm -rf savepoint/*
 rm -rf state_backend/*
 rm -rf result/*
 
-nohup ${FLINK_BASE}/bin/flink run -c test.UnifiedSavepointGeneratorJob flink1.13test-1.0-SNAPSHOT.jar \
+nohup ${FLINK_BASE}/bin/flink run -c test2.UnifiedSavepointGeneratorJob flink1.13test-1.0-SNAPSHOT.jar \
   --total_records ${TOTAL_RECORDS} \
   --num_keys ${NUM_KEYS} \
   --parallelism ${START_PARALLELISM} \
@@ -32,7 +32,7 @@ fg 1 # wait till the job finished
 # now let's start the restore job and check the result
 savepoint_dir=$(ls savepoint)
 ${FLINK_BASE}/bin/flink run --fromSavepoint "${PWD}/savepoint/${savepoint_dir}" \
-  -c test.UnifiedSavepointRestartAndCheckJob flink1.13test-1.0-SNAPSHOT.jar \
+  -c test2.UnifiedSavepointRestartAndCheckJob flink1.13test-1.0-SNAPSHOT.jar \
   --total_records ${TOTAL_RECORDS} \
   --num_keys ${NUM_KEYS} \
   --parallelism ${RESTORE_PARALLELISM} \
